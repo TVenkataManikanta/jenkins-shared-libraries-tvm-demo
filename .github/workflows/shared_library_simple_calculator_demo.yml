@@ -1,0 +1,81 @@
+name: MNO/Shared_Library_Simple_Calculator_demo
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+    inputs:
+      num1:
+        required: false
+        description: Enter the first integer.
+        default: '10'
+      num2:
+        required: false
+        description: Enter the second integer.
+        default: '5'
+jobs:
+  Initialization:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+#     # 'script' was not transformed because there is no suitable equivalent in GitHub Actions
+#     - name: script
+#       arguments:
+#       - key: scriptBlock
+#         value:
+#           isLiteral: true
+#           value: println(simpleCalculator.call(num1, num2))
+  Addition:
+    runs-on: ubuntu-latest
+    needs: Initialization
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+#     # 'script' was not transformed because there is no suitable equivalent in GitHub Actions
+#     - name: script
+#       arguments:
+#       - key: scriptBlock
+#         value:
+#           isLiteral: true
+#           value: println(simpleCalculator.add(num1, num2))
+  Subtraction:
+    runs-on: ubuntu-latest
+    needs: Addition
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+#     # 'script' was not transformed because there is no suitable equivalent in GitHub Actions
+#     - name: script
+#       arguments:
+#       - key: scriptBlock
+#         value:
+#           isLiteral: true
+#           value: println(simpleCalculator.subtract(num1, num2))
+  Multiplication:
+    runs-on: ubuntu-latest
+    needs: Subtraction
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+#     # 'script' was not transformed because there is no suitable equivalent in GitHub Actions
+#     - name: script
+#       arguments:
+#       - key: scriptBlock
+#         value:
+#           isLiteral: true
+#           value: println(simpleCalculator.multiply(num1, num2))
+  Odd_and_Even_Numbers:
+    name: Odd and Even Numbers
+    runs-on: ubuntu-latest
+    needs: Multiplication
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+#     # 'script' was not transformed because there is no suitable equivalent in GitHub Actions
+#     - name: script
+#       arguments:
+#       - key: scriptBlock
+#         value:
+#           isLiteral: true
+#           value: simpleCalculator.oddoreven(num1, num2)
