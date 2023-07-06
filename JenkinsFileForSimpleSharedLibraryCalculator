@@ -1,0 +1,41 @@
+@Library("simple-calculator") _
+pipeline {
+    agent any
+    stages {
+        stage ("Initialization") {
+            steps {
+                script {
+                    println(simpleCalculator.call(num1, num2))
+                }
+            }
+        }
+        stage ("Addition") {
+            steps {
+                script {
+                    println(simpleCalculator.add(num1, num2))
+                }
+            }
+        }
+        stage ("Subtraction") {
+            steps {
+                script {
+                    println(simpleCalculator.subtract(num1, num2))
+                }
+            }
+        }
+        stage ("Multiplication") {
+            steps {
+                script {
+                    println(simpleCalculator.multiply(num1, num2))
+                }
+            }
+        }
+        stage ("Odd and Even Numbers") {
+            steps {
+                script {
+                    simpleCalculator.oddoreven(num1, num2)
+                }
+            }
+        }
+    }
+}
